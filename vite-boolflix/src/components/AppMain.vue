@@ -1,13 +1,21 @@
 <script>
 import CardFilm from './CardFilm.vue';
-import CardTv from './CardTv.vue';
 
 export default {
-    name: 'AppMain'
+    name: 'AppMain',
+    components: {
+        CardFilm,
+    },
 
 }
-
 </script>
+
 <template>
-    <h1>main</h1>
+    <main>
+        <CardFilm />
+    </main>
 </template>
+
+
+
+<style lang="scss" scoped></style>

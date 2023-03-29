@@ -1,10 +1,16 @@
 <script>
-import Search from './Search.vue';
+import { store } from '../store';
+// import Search from './Search.vue';
 
 export default {
   name: 'AppHeader',
-  components: {
-    Search
+  // components: {
+  //   Search
+  // },
+  data() {
+    return {
+      store
+    }
   }
 
 }

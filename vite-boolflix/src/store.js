@@ -2,10 +2,10 @@ import { reactive } from 'vue';
 
 export const store = reactive({
 
-    storeTv: [],
+    // storeTv: [],
     storeFilm: [],
-    searchTV: '',
-    searchFilm: '',
-    filter: ''
+    // searchTV: '',
+    // searchFilm: '',
+    // filter: ''
 
 });
