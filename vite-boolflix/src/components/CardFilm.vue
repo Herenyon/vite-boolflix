@@ -11,7 +11,8 @@ export default {
     },
     data() {
         return {
-            store
+            store,
+            imgUrl: 'https://image.tmdb.org/t/p/w300'
         }
     }
 }
@@ -19,8 +20,7 @@ export default {
 </script>
 <template>
     <div v-for="card in store.storeFilm">
-        <Cards :img="'https://image.tmdb.org/t/p/w300/hQq8xZe5uLjFzSBt4LanNP7SQjl.jpg'" :name="card.title"
-            :type="card.original_language" />
+        <Cards :img="imgUrl + card.poster_path" :name="card.title" :type="card.original_language" />
     </div>
 </template>  
 
