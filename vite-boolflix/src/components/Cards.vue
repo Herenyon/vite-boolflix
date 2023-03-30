@@ -4,8 +4,10 @@ export default {
 
     props: {
         img: String,
-        name: String,
-        type: String
+        title: String,
+        original_title: String,
+        language: String,
+        score: Number
 
     }
 }
@@ -15,8 +17,10 @@ export default {
 
 <template>
     <img :src="img" alt="">
-    <div>{{ name }}</div>
-    <div>{{ type }}</div>
+    <div>{{ title }}</div>
+    <div>{{ original_title }}</div>
+    <div>{{ language }}</div>
+    <div>{{ score }}</div>
 </template>
 
 
