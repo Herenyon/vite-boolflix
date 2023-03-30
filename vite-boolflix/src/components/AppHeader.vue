@@ -20,7 +20,8 @@ export default {
 
 <template>
   <header>
-    <input type="search" id="search" placeholder="Cerca una serieTv o un film" v-model="search">
+    <input type="search" id="search" placeholder="Cerca una serieTv o un film" v-model="this.store.search"
+      v-on:keyup.enter="$emit('cerca')">
 
   </header>
 </template>

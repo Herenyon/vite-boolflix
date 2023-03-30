@@ -17,7 +17,7 @@ export default {
 
     return {
       store,
-      urlFilm: "https://api.themoviedb.org/3/search/movie?api_key=d38948d1024387ecb37857276ef015a7&query=$",
+      urlFilm: "https://api.themoviedb.org/3/search/movie",
       // urlSearch: 'urlFilm' + 'ritorno+al+futuro'
     }
   },
@@ -25,7 +25,8 @@ export default {
     search() {
       axios.get(this.urlFilm, {
         params: {
-          search: this.search
+          api_key: this.store.api_key,
+          query: this.store.search
         }
       })
         .then((response) => {
@@ -41,12 +42,13 @@ export default {
   },
   created() {
     this.search();
+
   }
 }
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader @cerca="search" />
   <AppMain />
   <AppFooter />
 </template>
