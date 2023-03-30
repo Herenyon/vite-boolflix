@@ -17,7 +17,7 @@ export default {
 
     return {
       store,
-      urlFilm: 'https://api.themoviedb.org/3/search/movie?api_key=d38948d1024387ecb37857276ef015a7&query=ritorno+al+futuro',
+      urlFilm: 'https://api.themoviedb.org/3/search/movie?api_key=d38948d1024387ecb37857276ef015a7&query=ritorno al futuro',
       // urlSearch: 'urlFilm' + 'ritorno+al+futuro'
     }
   },
@@ -26,7 +26,7 @@ export default {
       axios.get(this.urlFilm)
         .then((response) => {
           console.log(response);
-          this.store.storeFilm = response;
+          this.store.storeFilm = response.data.results;
           console.log(this.store.storeFilm);
         })
 

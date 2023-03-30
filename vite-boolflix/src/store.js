@@ -5,7 +5,7 @@ export const store = reactive({
     // storeTv: [],
     storeFilm: [],
     // searchTV: '',
-    // searchFilm: '',
+    search: '',
     // filter: ''
 
 });

@@ -20,7 +20,7 @@ export default {
 
 <template>
   <header>
-    <input type="search" id="search" placeholder="Cerca una serieTv o un film">
+    <input type="search" id="search" placeholder="Cerca una serieTv o un film" v-model="search">
 
   </header>
 </template>
