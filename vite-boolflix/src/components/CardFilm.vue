@@ -20,8 +20,9 @@ export default {
 </script>
 <template>
     <div v-for="card in store.storeFilm">
-        <Cards :img="imgUrl + card.poster_path" :title="card.title" :original_title="card.original_title"
-            :language="card.original_language" :score="card.vote_average" />
+        <Cards :img="imgUrl + card.poster_path" :title="card.title || card.name"
+            :original_title="card.original_title || card.original_name" :language="card.original_language"
+            :score="card.vote_average" />
     </div>
 </template>  
 

@@ -17,7 +17,7 @@ export default {
 
     return {
       store,
-      urlFilm: "https://api.themoviedb.org/3/search/movie",
+      urlFilm: "https://api.themoviedb.org/3/search/multi",
       urlTv: "https://api.themoviedb.org/3/search/tv"
     }
   },
@@ -34,19 +34,19 @@ export default {
           this.store.storeFilm = response.data.results;
           console.log(this.store.storeFilm);
 
-        }),
-        axios.get(this.urlTv, {
-          params: {
-            api_key: this.store.api_key,
-            query: this.store.search
-          }
         })
-          .then((response) => {
-            // console.log(response);
-            this.store.storeTv = response.data.results;
-            // console.log(this.store.storeTv);
+      // axios.get(this.urlTv, {
+      //   params: {
+      //     api_key: this.store.api_key,
+      //     query: this.store.search
+      //   }
+      // })
+      //   .then((response) => {
+      //     // console.log(response);
+      //     this.store.storeTv = response.data.results;
+      //     // console.log(this.store.storeTv);
 
-          })
+      //   })
     },
 
   },
