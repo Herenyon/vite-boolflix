@@ -1,10 +1,10 @@
 <script>
-import CardFilm from './CardFilm.vue';
+import CardMedia from './CardMedia.vue';
 import { store } from '../store';
 export default {
     name: 'AppMain',
     components: {
-        CardFilm,
+        CardMedia,
     },
     data() {
         return {
@@ -17,7 +17,7 @@ export default {
 
 <template>
     <main>
-        <CardFilm />
+        <CardMedia />
     </main>
 </template>
 

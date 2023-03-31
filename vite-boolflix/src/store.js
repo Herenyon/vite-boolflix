@@ -2,8 +2,8 @@ import { reactive } from 'vue';
 
 export const store = reactive({
 
-    storeTv: [],
-    storeFilm: [],
+
+    storeMedia: [],
 
     search: '',
     api_key: 'd38948d1024387ecb37857276ef015a7'

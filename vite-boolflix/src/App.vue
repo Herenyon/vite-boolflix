@@ -17,13 +17,13 @@ export default {
 
     return {
       store,
-      urlFilm: "https://api.themoviedb.org/3/search/multi",
-      urlTv: "https://api.themoviedb.org/3/search/tv"
+      urlMedia: "https://api.themoviedb.org/3/search/multi",
+      // urlTv: "https://api.themoviedb.org/3/search/tv"
     }
   },
   methods: {
     search() {
-      axios.get(this.urlFilm, {
+      axios.get(this.urlMedia, {
         params: {
           api_key: this.store.api_key,
           query: this.store.search
@@ -31,8 +31,8 @@ export default {
       })
         .then((response) => {
           console.log(response);
-          this.store.storeFilm = response.data.results;
-          console.log(this.store.storeFilm);
+          this.store.storeMedia = response.data.results;
+          console.log(this.store.storeMedia);
 
         })
       // axios.get(this.urlTv, {

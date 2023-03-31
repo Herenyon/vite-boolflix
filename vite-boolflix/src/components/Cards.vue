@@ -27,7 +27,10 @@ export default {
                     return this.language;
             }
         },
+        getScore() {
 
+            return Math.ceil(this.score / 2)
+        }
     }
 }
 
@@ -39,7 +42,10 @@ export default {
     <div>{{ title }}</div>
     <div>{{ original_title }}</div>
     <country-flag :country="getLanguage" size="small" />
-    <div>{{ score }}</div>
+    <div>
+        <font-awesome-icon icon="fa-solid fa-star" v-for="n in getScore" />
+        <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5 - getScore" />
+    </div>
 </template>
 
 
