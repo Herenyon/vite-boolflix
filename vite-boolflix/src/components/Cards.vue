@@ -1,7 +1,11 @@
 <script>
+import CountryFlag from 'vue-country-flag-next'
+
 export default {
     name: 'Cards',
-
+    components: {
+        CountryFlag
+    },
     props: {
         img: String,
         title: String,
@@ -9,6 +13,17 @@ export default {
         language: String,
         score: Number
 
+    },
+    computed: {
+        getLanguage() {
+            switch (this.language) {
+                case 'en':
+                    return 'gb';
+                    break;
+                default:
+                    return this.language;
+            }
+        }
     }
 }
 
@@ -19,7 +34,7 @@ export default {
     <img :src="img" alt="">
     <div>{{ title }}</div>
     <div>{{ original_title }}</div>
-    <div>{{ language }}</div>
+    <country-flag :country="getLanguage" size="small" />
     <div>{{ score }}</div>
 </template>
 

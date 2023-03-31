@@ -4,7 +4,6 @@ export const store = reactive({
 
     // storeTv: [],
     storeFilm: [],
-    // searchTV: '',
     search: '',
     api_key: 'd38948d1024387ecb37857276ef015a7'
     // filter: ''
