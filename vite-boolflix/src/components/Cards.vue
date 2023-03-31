@@ -20,10 +20,14 @@ export default {
                 case 'en':
                     return 'gb';
                     break;
+                case 'he':
+                    return 'il';
+                    break;
                 default:
                     return this.language;
             }
-        }
+        },
+
     }
 }
 

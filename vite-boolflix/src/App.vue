@@ -18,7 +18,7 @@ export default {
     return {
       store,
       urlFilm: "https://api.themoviedb.org/3/search/movie",
-      // urlSearch: 'urlFilm' + 'ritorno+al+futuro'
+      urlTv: "https://api.themoviedb.org/3/search/tv"
     }
   },
   methods: {
@@ -33,11 +33,21 @@ export default {
           console.log(response);
           this.store.storeFilm = response.data.results;
           console.log(this.store.storeFilm);
+
+        }),
+        axios.get(this.urlTv, {
+          params: {
+            api_key: this.store.api_key,
+            query: this.store.search
+          }
         })
+          .then((response) => {
+            // console.log(response);
+            this.store.storeTv = response.data.results;
+            // console.log(this.store.storeTv);
 
-
-
-    }
+          })
+    },
 
   },
   created() {
