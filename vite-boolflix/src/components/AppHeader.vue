@@ -43,7 +43,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(31, 31, 31);
+  background-color: rgb(25, 25, 25);
   padding: .9375rem 30px;
 
   div {
