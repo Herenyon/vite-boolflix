@@ -55,7 +55,8 @@ export default {
 
   }
 }
-</script>
+</script >
+
 
 <template>
   <AppHeader @cerca="search" />
@@ -63,4 +64,6 @@ export default {
   <AppFooter />
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+@use './styles/general.scss' as *;
+</style>
