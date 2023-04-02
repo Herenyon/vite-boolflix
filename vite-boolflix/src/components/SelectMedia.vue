@@ -25,6 +25,7 @@ select {
     background: none;
     padding: 10px 10px;
     color: $text-color-primary;
+    height: 40px;
 
     option {
         background-color: rgb(31, 31, 31);

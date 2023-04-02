@@ -4,6 +4,7 @@ import { store } from './store';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
+import { onBeforeMount, onMounted } from 'vue';
 
 
 export default {
@@ -50,9 +51,12 @@ export default {
     },
 
   },
-  created() {
-    this.search();
+  // created() {
+  //   this.search();
 
+  // }
+  beforeCreate() {
+    this.search();
   }
 }
 </script >
@@ -61,9 +65,11 @@ export default {
 <template>
   <AppHeader @cerca="search" />
   <AppMain />
-  <AppFooter />
+  <!-- <AppFooter /> -->
 </template>
 
 <style lang="scss" scoped>
 @use './styles/general.scss' as *;
+@use './styles/variables.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
 </style>

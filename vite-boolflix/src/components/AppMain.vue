@@ -28,8 +28,10 @@ export default {
 
 main {
     color: $text-color-primary;
+    height: calc(100vh - 40px);
     background-color: rgb(80, 80, 80);
-    padding: 100px;
+    padding-top: 140px;
+    // padding: 0 80px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

@@ -22,7 +22,9 @@ export default {
 <template>
   <header class="header">
     <div>
-      <img src="../assets/img/Boolflix-logo.png" alt="" class="logo">
+      <a href="#">
+        <img src="../assets/img/Boolflix-logo.png" alt="" class="logo">
+      </a>
     </div>
     <div>
       <input type="search" id="search" class="search-bar" placeholder="Cerca una serieTv o un film"
@@ -45,6 +47,10 @@ export default {
   align-items: center;
   background-color: rgb(25, 25, 25);
   padding: .9375rem 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
 
   div {
     .logo {

@@ -17,79 +17,32 @@ export default {
             imgNotFound: '../src/assets/img/poster-not-found.png'
         }
     }
-    //     computed: {
-    //         getImg() {
-    //             switch (this.store.storeMedia.results.poster_path) {
-    //                 case 'undefined':
-    //                     return this.img = ;
-    //                     break;
-    //                 default:
-    //                     return this.img
-    //             }
+    // computed: {
+    //     getImg() {
+    //         switch (this.img) {
+    //             case this.img === 'https://image.tmdb.org/t/p/w342undefined ':
+    //                 return this.img = this.imgNotFound;
+    //                 break;
+    //             default:
+    //                 return "imgUrl + card.poster_path"
+    //         }
 
-    //         },
-    //     }
+    //     },
+    // }
 }
 
 </script>
 <template>
-    <div v-for="card in store.storeMedia" classs="flip-card">
+    <div v-for="card in store.storeMedia" class="flip-card">
+
+        <Cards :img="this.imgNotFound" :title="card.title || card.name"
+            :original_title="card.original_title || card.original_name" :language="card.original_language"
+            :score="card.vote_average" :overview="card.overview" v-if="card.poster_path === undefined" />
+
         <Cards :img="imgUrl + card.poster_path" :title="card.title || card.name"
             :original_title="card.original_title || card.original_name" :language="card.original_language"
-            :score="card.vote_average" />
+            :score="card.vote_average" :overview="card.overview" v-else />
     </div>
 </template>  
 
-<style lang="scss" scoped>
-.flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 200px;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px;
-
-
-
-    .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-
-
-
-        .flip-card-front {
-            background-color: #bbb;
-            color: black;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        .flip-card-back {
-            background-color: dodgerblue;
-            color: white;
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-
-            backface-visibility: hidden;
-        }
-    }
-
-    .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-    }
-
-
-}
-</style>
+<style lang="scss" scoped></style>
