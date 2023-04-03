@@ -45,7 +45,10 @@ export default {
         <div class="flip-card-inner">
 
             <div class="flip-card-front">
-                <img :src="img" alt="">
+                <!-- immagine se c'è il poster in poster_path  -->
+                <img src="../assets/img/poster-not-found.png" alt="" v-if="img === 'https://image.tmdb.org/t/p/w342null'">
+                <!-- immagine se c'è il poster in poster_path -->
+                <img :src="img" alt="" v-else>
             </div>
             <div class="flip-card-back">
 
@@ -59,7 +62,7 @@ export default {
                     {{ getScore }}
 
                     <!-- <font-awesome-icon :icon="['fas', 'star']" v-for="n in getScore" />
-                        <font-awesome-icon :icon="['far', 'star']" /> -->
+                                                <font-awesome-icon :icon="['far', 'star']" /> -->
                 </div>
                 <div class="text-format">
                     <strong>Plot:</strong>

@@ -18,46 +18,43 @@ export default {
 
     return {
       store,
-      urlMedia: "https://api.themoviedb.org/3/search/multi",
-      // urlTv: "https://api.themoviedb.org/3/search/tv"
+
     }
   },
   methods: {
     search() {
-      axios.get(this.urlMedia, {
+      axios.get(this.store.config.urlMovie, {
         params: {
-          api_key: this.store.api_key,
+          api_key: this.store.config.api_key,
           query: this.store.search
         }
       })
         .then((response) => {
           console.log(response);
-          this.store.storeMedia = response.data.results;
-          console.log(this.store.storeMedia);
+          this.store.storeMovie = response.data.results;
+          console.log(this.store.storeMovie);
 
         })
-      // axios.get(this.urlTv, {
-      //   params: {
-      //     api_key: this.store.api_key,
-      //     query: this.store.search
-      //   }
-      // })
-      //   .then((response) => {
-      //     // console.log(response);
-      //     this.store.storeTv = response.data.results;
-      //     // console.log(this.store.storeTv);
+      axios.get(this.store.config.urlTv, {
+        params: {
+          api_key: this.store.config.api_key,
+          query: this.store.search
+        }
+      })
+        .then((response) => {
+          // console.log(response);
+          this.store.storeTv = response.data.results;
+          // console.log(this.store.storeTv);
 
-      //   })
+        })
     },
 
   },
-  // created() {
-  //   this.search();
-
-  // }
-  beforeCreate() {
+  created() {
     this.search();
+
   }
+
 }
 </script >
 
